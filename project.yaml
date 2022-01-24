@@ -1,14 +1,17 @@
-specVersion: 0.0.1
+specVersion: 0.3.0
 description: A subquery project provide dictionary data & service for a substrate-based network
 repository: 'https://github.com/subquery/subql-dictionary'
-schema: ./schema.graphql
+schema: 
+  file: ./schema.graphql
 network:
-  endpoint: 'wss://polkadot.api.onfinality.io/public-ws'
+  endpoint: 'https://bombay.stakesystems.io'
+  chainId: 'bombay-12'
 dataSources:
   - name: main
-    kind: substrate/Runtime
+    kind: terra/Runtime
     startBlock: 1
     mapping:
+      file: ./dist/index.js
       handlers:
-        - handler: handleBlock
-          kind: substrate/BlockHandler
+        - handler: handleEvent
+          kind: terra/EventHandler
