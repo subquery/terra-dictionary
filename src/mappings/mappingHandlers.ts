@@ -1,6 +1,5 @@
 import { TerraEvent } from "@subql/types";
 import { Event } from "../types";
-import { wrapExtrinsics } from "../utils";
 import * as crypto from "crypto";
 
 
