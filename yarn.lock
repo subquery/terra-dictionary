@@ -262,6 +262,29 @@
   "resolved" "https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz"
   "version" "1.1.0"
 
+"@subql/cli@file:../subql/packages/cli":
+  "resolved" "file:../subql/packages/cli"
+  "version" "0.16.1"
+  dependencies:
+    "@oclif/command" "^1.8.0"
+    "@oclif/config" "^1.17.0"
+    "@oclif/plugin-help" "^3.2.3"
+    "@subql/common" "workspace:*"
+    "@subql/validator" "workspace:*"
+    "@types/ejs" "^3.1.0"
+    "chalk" "^4.1.2"
+    "cli-ux" "^5.6.3"
+    "ejs" "^3.1.6"
+    "ipfs-http-client" "^52.0.5"
+    "rimraf" "^3.0.2"
+    "simple-git" "^2.47.0"
+    "ts-loader" "^9.2.6"
+    "tslib" "^2.3.1"
+    "webpack" "^5.61.0"
+    "webpack-merge" "^5.8.0"
+    "websocket" "^1.0.34"
+    "yaml-loader" "^0.6.0"
+
 "@subql/types@file:../subql/packages/types":
   "resolved" "file:../subql/packages/types"
   "version" "0.11.0"
