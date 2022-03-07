@@ -5,7 +5,7 @@ type Event @entity {
 
   type: String! @index
 
-  event: String! @index
+  event: String!
 
   blockHeight: Int! @index
 }

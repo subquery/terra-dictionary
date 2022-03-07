@@ -4,12 +4,12 @@ repository: 'https://github.com/subquery/subql-dictionary'
 schema: 
   file: ./schema.graphql
 network:
-  endpoint: 'https://bombay.stakesystems.io'
-  chainId: 'bombay-12'
+  endpoint: 'https://terra.stakesystems.io/'
+  chainId: 'columbus-5'
 dataSources:
   - name: main
     kind: terra/Runtime
-    startBlock: 5900001
+    startBlock: 6745053
     mapping:
       file: ./dist/index.js
       handlers:

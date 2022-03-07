@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "@polkadot/api": "6.9.2",
+    "@subql/cli": "^0.22.0",
+    "@subql/types-terra": "^0.1.0",
     "pino": "^7.6.4",
     "store": "^2.0.12",
     "tslib": "^2.3.1"
