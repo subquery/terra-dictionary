@@ -1,20 +1,24 @@
-import { TerraEvent } from "@subql/types-terra";
-import { Event } from "../types";
-import * as crypto from "crypto";
+import { TerraEvent, TerraMessage } from "@subql/types-terra";
+import { Event, Message } from "../types";
 
 
 export async function handleEvent(event: TerraEvent) {
-    
-    const blockHeight = event.block.block.header.height;
-    for (let type in event.event){
 
-        const idx = crypto.randomBytes(32).toString("hex");
-        const newEvent = new Event(`${blockHeight}-${idx}`);
-        newEvent.blockHeight = Number.parseInt(blockHeight);
-        newEvent.type = type;
-        newEvent.event = JSON.stringify(event.event[type]);
+    const blockHeight = BigInt(event.block.block.block.header.height);
+    const eventStore = new Event(`${event.block.block.block_id.hash}-${event.tx.tx.txhash}-${event.idx}`);
+    eventStore.blockHeight = blockHeight;
+    eventStore.txHash = event.tx.tx.txhash;
+    eventStore.type = event.event.type;
+    eventStore.msgType = event.msg.msg.toData()["@type"];
+    await eventStore.save();
+}
 
-        await newEvent.save();
-    }
+export async function handleMessage(message: TerraMessage) {
+    const blockHeight = BigInt(message.block.block.block.header.height);
+    const messageStore = new Message(`${message.block.block.block_id.hash}-${message.tx.tx.txhash}-${message.idx}`);
+    messageStore.blockHeight = blockHeight;
+    messageStore.txHash = message.tx.tx.txhash;
+    messageStore.type = message.msg.toData()["@type"];
+    await messageStore.save();
 }
 

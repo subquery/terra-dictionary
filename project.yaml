@@ -15,3 +15,5 @@ dataSources:
       handlers:
         - handler: handleEvent
           kind: terra/EventHandler
+        - handler: handleMessage
+          kind: terra/MessageHandler
