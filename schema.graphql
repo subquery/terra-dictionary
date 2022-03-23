@@ -1,7 +1,13 @@
+type KVPair @jsonField {
+  key: String!
+  value: String!
+}
+
 type Message @entity {
   id: ID!
   txHash: String! @index
   type: String! @index
+  data: [KVPair]!
   blockHeight: BigInt! @index
 }
 
@@ -11,4 +17,5 @@ type Event @entity {
   type: String! @index
   msgType: String! @index
   blockHeight: BigInt! @index
+  data: [KVPair]!
 }

@@ -10,6 +10,8 @@ export async function handleEvent(event: TerraEvent) {
     eventStore.txHash = event.tx.tx.txhash;
     eventStore.type = event.event.type;
     eventStore.msgType = event.msg.msg.toData()["@type"];
+    const msgData = event.msg.msg.toData();
+    eventStore.data = Object.keys(msgData).map(key => ({ key: key, value: msgData[key] }));
     await eventStore.save();
 }
 
@@ -19,6 +21,8 @@ export async function handleMessage(message: TerraMessage) {
     messageStore.blockHeight = blockHeight;
     messageStore.txHash = message.tx.tx.txhash;
     messageStore.type = message.msg.toData()["@type"];
+    const msgData = message.msg.toData();
+    messageStore.data = Object.keys(msgData).map(key => ({ key: key, value: msgData[key] }));
     await messageStore.save();
 }
 
