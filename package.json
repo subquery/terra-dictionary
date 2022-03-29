@@ -1,7 +1,7 @@
 {
-  "name": "subql-dictionary",
+  "name": "terra-dictionary",
   "version": "1.0.0",
-  "description": "A subquery project provide dictionary data & service for a substrate-based network",
+  "description": "A SubQuery project provide dictionary data & service for the Terra network",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -b",
@@ -10,14 +10,14 @@
     "codegen": "./node_modules/.bin/subql codegen",
     "start:docker": "docker-compose pull && docker-compose up --remove-orphans"
   },
-  "homepage": "https://github.com/subquery/subql-starter",
-  "repository": "github:subquery/subql-starter",
+  "homepage": "https://github.com/subquery/terra-dictionary",
+  "repository": "github:subquery/terra-dictionary",
   "files": [
     "dist",
     "schema.graphql",
     "project.yaml"
   ],
-  "author": "Jay Ji",
+  "author": "SubQuery Team",
   "license": "Apache-2.0",
   "devDependencies": {
     "@terra-money/terra.js": "latest",
