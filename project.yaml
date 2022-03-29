@@ -1,10 +1,10 @@
 specVersion: 0.3.0
-description: A subquery project provide dictionary data & service for a substrate-based network
-repository: 'https://github.com/subquery/subql-dictionary'
+description: A SubQuery project provide dictionary data & service for the Terra network
+repository: 'https://github.com/subquery/terra-dictionary'
 schema: 
   file: ./schema.graphql
 network:
-  endpoint: 'https://terra.stakesystems.io/'
+  endpoint: 'https://terra-columbus-5.api.onfinality.io'
   chainId: 'columbus-5'
 dataSources:
   - name: main
