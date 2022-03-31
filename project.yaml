@@ -1,11 +1,11 @@
 specVersion: 0.3.0
 description: A SubQuery project provide dictionary data & service for the Terra network
-repository: 'https://github.com/subquery/terra-dictionary'
-schema: 
+repository: "https://github.com/subquery/terra-dictionary"
+schema:
   file: ./schema.graphql
 network:
-  endpoint: 'https://terra-columbus-5.beta.api.onfinality.io'
-  chainId: 'columbus-5'
+  chainId: "columbus-5" # Terra network code
+  endpoint: "https://terra-columbus-5.beta.api.onfinality.io"
 dataSources:
   - name: main
     kind: terra/Runtime
