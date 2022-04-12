@@ -6,6 +6,7 @@ schema:
 network:
   chainId: "columbus-5" # Terra network code
   endpoint: "https://terra-columbus-5.beta.api.onfinality.io"
+  mantlemint: "https://mantlemint.terra-columbus-5.beta.api.onfinality.io:1320"
 dataSources:
   - name: main
     kind: terra/Runtime
