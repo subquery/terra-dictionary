@@ -1,15 +1,23 @@
-specVersion: 0.3.0
+specVersion: 1.0.0
+name: terra-dictionary
+version: 1.0.0
+runner:
+  node:
+    name: '@subql/node-terra'
+    version: "latest"
+  query:
+    name: '@subql/query'
+    version: "latest"
 description: A SubQuery project provide dictionary data & service for the Terra network
-repository: "https://github.com/subquery/terra-dictionary"
+repository: https://github.com/subquery/terra-dictionary
 schema:
   file: ./schema.graphql
 network:
-  chainId: "columbus-5" # Terra network code
-  endpoint: "https://terra-columbus-5.beta.api.onfinality.io"
-  mantlemint: "https://mantlemint.terra-columbus-5.beta.api.onfinality.io:1320"
+  chainId: columbus-5
+  endpoint: https://terra-columbus-5.beta.api.onfinality.io
+  mantlemint: https://mantlemint.terra-columbus-5.beta.api.onfinality.io:1320
 dataSources:
-  - name: main
-    kind: terra/Runtime
+  - kind: terra/Runtime
     startBlock: 4724001
     mapping:
       file: ./dist/index.js
