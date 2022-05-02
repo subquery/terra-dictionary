@@ -14,7 +14,7 @@ schema:
   file: ./schema.graphql
 network:
   chainId: bombay-12
-  endpoint: http://210.55.152.72:1317
+  endpoint: https://terra-bombay-12.beta.api.onfinality.io
 dataSources:
   - kind: terra/Runtime
     startBlock: 4724001
