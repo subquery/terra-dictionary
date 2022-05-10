@@ -17,7 +17,7 @@ network:
   endpoint: https://terra-bombay-12.beta.api.onfinality.io
 dataSources:
   - kind: terra/Runtime
-    startBlock: 4724001
+    startBlock: 5900001
     mapping:
       file: ./dist/index.js
       handlers:
