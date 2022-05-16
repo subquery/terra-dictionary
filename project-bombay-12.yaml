@@ -1,0 +1,27 @@
+specVersion: 1.0.0
+name: terra-dictionary
+version: 1.0.0
+runner:
+  node:
+    name: '@subql/node-terra'
+    version: "*"
+  query:
+    name: '@subql/query'
+    version: "*"
+description: A SubQuery project provide dictionary data & service for the Terra network
+repository: https://github.com/subquery/terra-dictionary
+schema:
+  file: ./schema.graphql
+network:
+  chainId: bombay-12
+  endpoint: https://terra-bombay-12.beta.api.onfinality.io
+dataSources:
+  - kind: terra/Runtime
+    startBlock: 5900001
+    mapping:
+      file: ./dist/index.js
+      handlers:
+        - handler: handleEvent
+          kind: terra/EventHandler
+        - handler: handleMessage
+          kind: terra/MessageHandler
